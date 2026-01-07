@@ -1,0 +1,25 @@
+name: mh_academy_app
+description: A WebView app for MH Academy Economics Blog.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # ওয়েব ভিউ প্যাকেজ
+  webview_flutter: ^4.7.0
+  # ইন্টারনেট পারমিশন এবং লিংক হ্যান্ডলিং এর জন্য
+  url_launcher: ^6.2.4
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
