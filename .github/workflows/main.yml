@@ -24,9 +24,14 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
-      # অ্যাপ তৈরির আগে ফাইল জেনারেট করা (নাম অবশ্যই mh_academy_app হতে হবে)
+      # ধাপ ১: অ্যান্ড্রয়েড ফাইল তৈরি করা
       - name: Recreate Android Files
         run: flutter create --project-name mh_academy_app .
+
+      # ধাপ ২: ইন্টারনেট পারমিশন যুক্ত করা (নতুন যুক্ত করা হয়েছে)
+      - name: Add Internet Permission
+        run: |
+          sed -i 's|<application|<uses-permission android:name="android.permission.INTERNET"/>\n    <application|g' android/app/src/main/AndroidManifest.xml
 
       - name: Install Dependencies
         run: flutter pub get
